@@ -9,7 +9,7 @@
 import UIKit
 import YYModel
 
-class SCREmoticon: NSObject {
+public class SCREmoticon: NSObject {
     @objc var chs: String?
     @objc var png: String?
     @objc var type = false
@@ -39,7 +39,7 @@ class SCREmoticon: NSObject {
         return NSAttributedString(attachment: attachment)
     }
     
-    override var description: String{
+    override public var description: String{
         return yy_modelDescription()
     }
 }

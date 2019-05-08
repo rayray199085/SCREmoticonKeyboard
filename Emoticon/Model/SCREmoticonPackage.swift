@@ -9,7 +9,7 @@
 import UIKit
 import YYModel
 
-class SCREmoticonPackage: NSObject {
+public class SCREmoticonPackage: NSObject {
     @objc var emoticon_group_name: String?
     @objc var emoticon_group_path: String?{
         didSet{
@@ -32,7 +32,7 @@ class SCREmoticonPackage: NSObject {
     }
     @objc lazy var emoticonList: [SCREmoticon] = [SCREmoticon]()
     
-    override var description: String{
+    override public var description: String{
         return yy_modelDescription()
     }
 }

@@ -9,7 +9,7 @@
 import Foundation
 import YYModel
 
-class SCREmoticonManager{
+public class SCREmoticonManager{
     public static let shared = SCREmoticonManager()
     lazy var emoticonPackages = [SCREmoticonPackage]()
     private init(){
@@ -17,7 +17,7 @@ class SCREmoticonManager{
     }
 }
 extension SCREmoticonManager{
-    public func searchEmoticon(text: String)-> SCREmoticon?{
+     public func searchEmoticon(text: String)-> SCREmoticon?{
         for package in emoticonPackages{
             let result = package.emoticonList.filter { (emoticon) -> Bool in
                 return emoticon.chs == text
