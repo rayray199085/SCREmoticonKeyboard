@@ -43,7 +43,10 @@ extension SCREmoticonManager{
             }
             textM.replaceCharacters(in: res.range(at: 0), with: emoticon.imageText(font: font))
         }
-        textM.addAttributes([NSAttributedString.Key.font : font], range: NSRange(location: 0, length: textM.length))
+        textM.addAttributes(
+            [NSAttributedString.Key.font : font,
+             NSAttributedString.Key.foregroundColor: UIColor.darkGray],
+            range: NSRange(location: 0, length: textM.length))
         return textM
     }
 }
