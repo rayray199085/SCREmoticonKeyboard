@@ -6,7 +6,7 @@
 		<key>bgImageName</key>
 		<string>left</string>
 		<key>emoticon_group_name</key>
-		<string>最近</string>
+		<string>Recent</string>
 		<key>emoticon_group_identifier</key>
 		<string></string>
 		<key>emoticon_group_type</key>
@@ -18,7 +18,7 @@
 		<key>bgImageName</key>
 		<string>mid</string>
 		<key>emoticon_group_name</key>
-		<string>默认</string>
+		<string>Default</string>
 		<key>emoticon_group_identifier</key>
 		<string>com.sina.default</string>
 		<key>emoticon_group_type</key>
@@ -42,7 +42,7 @@
 		<key>bgImageName</key>
 		<string>right</string>
 		<key>emoticon_group_name</key>
-		<string>浪小花</string>
+		<string>LXH</string>
 		<key>emoticon_group_identifier</key>
 		<string>com.sina.lagnxiaohua</string>
 		<key>emoticon_group_type</key>

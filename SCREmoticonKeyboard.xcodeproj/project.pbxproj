@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		0D64533C2286906E00FFE7EE /* SCEmoticonKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D64533B2286906E00FFE7EE /* SCEmoticonKeyboard.swift */; };
+		0D6453402286976B00FFE7EE /* SCEmoticonKeyboard.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D64533F2286976B00FFE7EE /* SCEmoticonKeyboard.xib */; };
+		0D6453422286A07A00FFE7EE /* SCEmoticonToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D6453412286A07A00FFE7EE /* SCEmoticonToolbar.swift */; };
+		0D6453442286B40500FFE7EE /* SCEmoticonCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D6453432286B40500FFE7EE /* SCEmoticonCell.xib */; };
+		0D6453462286B44600FFE7EE /* SCEmoticonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D6453452286B44600FFE7EE /* SCEmoticonCell.swift */; };
 		0DB6045622824F18003FCBEF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB6045522824F18003FCBEF /* AppDelegate.swift */; };
 		0DB6045822824F18003FCBEF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB6045722824F18003FCBEF /* ViewController.swift */; };
 		0DB6045B22824F18003FCBEF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0DB6045922824F18003FCBEF /* Main.storyboard */; };
@@ -22,6 +26,10 @@
 
 /* Begin PBXFileReference section */
 		0D64533B2286906E00FFE7EE /* SCEmoticonKeyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SCEmoticonKeyboard.swift; sourceTree = "<group>"; };
+		0D64533F2286976B00FFE7EE /* SCEmoticonKeyboard.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SCEmoticonKeyboard.xib; sourceTree = "<group>"; };
+		0D6453412286A07A00FFE7EE /* SCEmoticonToolbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SCEmoticonToolbar.swift; sourceTree = "<group>"; };
+		0D6453432286B40500FFE7EE /* SCEmoticonCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SCEmoticonCell.xib; sourceTree = "<group>"; };
+		0D6453452286B44600FFE7EE /* SCEmoticonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SCEmoticonCell.swift; sourceTree = "<group>"; };
 		0DB6045222824F18003FCBEF /* SCREmoticonKeyboard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SCREmoticonKeyboard.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0DB6045522824F18003FCBEF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0DB6045722824F18003FCBEF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -50,6 +58,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0D64533D2286962C00FFE7EE /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				0DB604762282B640003FCBEF /* SCREmoticonManager.swift */,
+			);
+			path = Tools;
+			sourceTree = "<group>";
+		};
+		0D64533E2286964800FFE7EE /* View */ = {
+			isa = PBXGroup;
+			children = (
+				0D64533B2286906E00FFE7EE /* SCEmoticonKeyboard.swift */,
+				0D6453412286A07A00FFE7EE /* SCEmoticonToolbar.swift */,
+				0D64533F2286976B00FFE7EE /* SCEmoticonKeyboard.xib */,
+				0D6453432286B40500FFE7EE /* SCEmoticonCell.xib */,
+				0D6453452286B44600FFE7EE /* SCEmoticonCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		0DB6044922824F18003FCBEF = {
 			isa = PBXGroup;
 			children = (
@@ -85,10 +113,10 @@
 		0DB604712282B640003FCBEF /* Emoticon */ = {
 			isa = PBXGroup;
 			children = (
-				0DB604722282B640003FCBEF /* Emoticons.bundle */,
 				0DB604732282B640003FCBEF /* Model */,
-				0DB604762282B640003FCBEF /* SCREmoticonManager.swift */,
-				0D64533B2286906E00FFE7EE /* SCEmoticonKeyboard.swift */,
+				0D64533E2286964800FFE7EE /* View */,
+				0D64533D2286962C00FFE7EE /* Tools */,
+				0DB604722282B640003FCBEF /* Emoticons.bundle */,
 			);
 			path = Emoticon;
 			sourceTree = SOURCE_ROOT;
@@ -180,7 +208,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				0DB6046022824F1A003FCBEF /* LaunchScreen.storyboard in Resources */,
+				0D6453402286976B00FFE7EE /* SCEmoticonKeyboard.xib in Resources */,
 				0DB604772282B640003FCBEF /* Emoticons.bundle in Resources */,
+				0D6453442286B40500FFE7EE /* SCEmoticonCell.xib in Resources */,
 				0DB6045D22824F1A003FCBEF /* Assets.xcassets in Resources */,
 				0DB6045B22824F18003FCBEF /* Main.storyboard in Resources */,
 			);
@@ -243,7 +273,9 @@
 				0DB604782282B640003FCBEF /* SCREmoticonPackage.swift in Sources */,
 				0DB6045822824F18003FCBEF /* ViewController.swift in Sources */,
 				0DB604792282B640003FCBEF /* SCREmoticon.swift in Sources */,
+				0D6453462286B44600FFE7EE /* SCEmoticonCell.swift in Sources */,
 				0DB6047A2282B640003FCBEF /* SCREmoticonManager.swift in Sources */,
+				0D6453422286A07A00FFE7EE /* SCEmoticonToolbar.swift in Sources */,
 				0D64533C2286906E00FFE7EE /* SCEmoticonKeyboard.swift in Sources */,
 				0DB6045622824F18003FCBEF /* AppDelegate.swift in Sources */,
 			);
