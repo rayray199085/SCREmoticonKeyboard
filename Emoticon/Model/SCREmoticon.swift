@@ -14,7 +14,7 @@ public class SCREmoticon: NSObject {
     @objc var png: String?
     @objc var type = false
     @objc var code: String?
-    @objc var emoji: String?{
+    @objc public var emoji: String?{
         return code?.getEmojiFromHexInt32CodeString()
     }
     @objc var directory: String?
@@ -31,7 +31,7 @@ public class SCREmoticon: NSObject {
         return UIImage(named: directory.appendingPathComponent(imageName), in: imageBundle, compatibleWith: nil)
     }
     
-    func imageText(font: UIFont)->NSAttributedString{
+    public func imageText(font: UIFont)->NSAttributedString{
         guard let image = image else{
             return NSAttributedString(string: "")
         }

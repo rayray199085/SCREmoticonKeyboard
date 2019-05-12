@@ -8,6 +8,6 @@
 
 import UIKit
 
-class SCRTextAttachment: NSTextAttachment {
+public class SCRTextAttachment: NSTextAttachment {
     var chs: String?
 }
