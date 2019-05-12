@@ -10,8 +10,8 @@ import UIKit
 import YYModel
 
 public class SCREmoticonPackage: NSObject {
-    @objc var emoticon_group_name: String?
-    @objc var emoticon_group_path: String?{
+    @objc public var emoticon_group_name: String?
+    @objc public var emoticon_group_path: String?{
         didSet{
             let bundle = Bundle(for: SCREmoticonManager.self)
             guard let directoryName = emoticon_group_path,
@@ -30,9 +30,9 @@ public class SCREmoticonPackage: NSObject {
             
         }
     }
-    @objc lazy var emoticonList: [SCREmoticon] = [SCREmoticon]()
+    @objc public lazy var emoticonList: [SCREmoticon] = [SCREmoticon]()
     
-    @objc var numberOfPages: Int{
+    @objc public var numberOfPages: Int{
         return (emoticonList.count - 1) / 20 + 1
     }
     

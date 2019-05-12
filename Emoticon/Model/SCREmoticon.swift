@@ -10,15 +10,15 @@ import UIKit
 import YYModel
 
 public class SCREmoticon: NSObject {
-    @objc var chs: String?
-    @objc var png: String?
-    @objc var type = false
-    @objc var code: String?
+    @objc public var chs: String?
+    @objc public var png: String?
+    @objc public var type = false
+    @objc public var code: String?
     @objc public var emoji: String?{
         return code?.getEmojiFromHexInt32CodeString()
     }
-    @objc var directory: String?
-    @objc var image: UIImage?{
+    @objc public var directory: String?
+    @objc public var image: UIImage?{
         if type{
             return nil
         }
