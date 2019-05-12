@@ -14,6 +14,9 @@ public class SCREmoticon: NSObject {
     @objc var png: String?
     @objc var type = false
     @objc var code: String?
+    @objc var emoji: String?{
+        return code?.getEmojiFromHexInt32CodeString()
+    }
     @objc var directory: String?
     @objc var image: UIImage?{
         if type{
@@ -32,11 +35,14 @@ public class SCREmoticon: NSObject {
         guard let image = image else{
             return NSAttributedString(string: "")
         }
-        let attachment = NSTextAttachment()
+        let attachment = SCRTextAttachment()
         let height = font.lineHeight
         attachment.image = image
+        attachment.chs = chs
         attachment.bounds = CGRect(x: 0, y: -height * 0.2, width: height, height: height)
-        return NSAttributedString(attachment: attachment)
+        let attrTextM = NSMutableAttributedString(attributedString: NSAttributedString(attachment: attachment))
+        attrTextM.addAttributes([NSAttributedString.Key.font : font], range: NSRange(location: 0, length: 1))
+        return attrTextM
     }
     
     override public var description: String{

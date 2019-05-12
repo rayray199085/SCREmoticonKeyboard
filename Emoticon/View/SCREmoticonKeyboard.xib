@@ -12,15 +12,15 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" id="Jx0-ct-4Qa" customClass="SCEmoticonKeyboard" customModule="SCREmoticonKeyboard" customModuleProvider="target">
+        <view contentMode="scaleToFill" id="Jx0-ct-4Qa" customClass="SCREmoticonKeyboard" customModule="SCREmoticonKeyboard" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="375" height="260"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pmI-cO-ezW" userLabel="toolbar" customClass="SCEmoticonToolbar" customModule="SCREmoticonKeyboard" customModuleProvider="target">
-                    <rect key="frame" x="0.0" y="213" width="375" height="47"/>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pmI-cO-ezW" userLabel="toolbar" customClass="SCREmoticonToolbar" customModule="SCREmoticonKeyboard" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="220" width="375" height="40"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9J3-8D-qdo">
-                            <rect key="frame" x="0.0" y="0.0" width="94" height="47"/>
+                            <rect key="frame" x="0.0" y="0.0" width="94" height="40"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <state key="normal" title="Button"/>
                             <state key="selected">
@@ -31,7 +31,7 @@
                             </state>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kp2-ws-6pm">
-                            <rect key="frame" x="94" y="0.0" width="93.5" height="47"/>
+                            <rect key="frame" x="94" y="0.0" width="93.5" height="40"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <state key="normal" title="Button"/>
                             <state key="selected">
@@ -42,7 +42,7 @@
                             </state>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LIh-f8-RTx">
-                            <rect key="frame" x="187.5" y="0.0" width="94" height="47"/>
+                            <rect key="frame" x="187.5" y="0.0" width="94" height="40"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <state key="normal" title="Button"/>
                             <state key="selected">
@@ -53,7 +53,7 @@
                             </state>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ohl-5Q-w7D">
-                            <rect key="frame" x="281.5" y="0.0" width="93.5" height="47"/>
+                            <rect key="frame" x="281.5" y="0.0" width="93.5" height="40"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <state key="normal" title="Button"/>
                             <state key="selected">
@@ -66,7 +66,7 @@
                     </subviews>
                     <constraints>
                         <constraint firstItem="9J3-8D-qdo" firstAttribute="leading" secondItem="pmI-cO-ezW" secondAttribute="leading" id="1dX-79-kLV"/>
-                        <constraint firstAttribute="height" constant="47" id="6Lp-aD-E1i"/>
+                        <constraint firstAttribute="height" constant="40" id="6Lp-aD-E1i"/>
                         <constraint firstItem="LIh-f8-RTx" firstAttribute="centerY" secondItem="pmI-cO-ezW" secondAttribute="centerY" id="DVD-W7-3UA"/>
                         <constraint firstItem="Kp2-ws-6pm" firstAttribute="height" secondItem="9J3-8D-qdo" secondAttribute="height" id="E5V-TV-Rvc"/>
                         <constraint firstItem="LIh-f8-RTx" firstAttribute="height" secondItem="9J3-8D-qdo" secondAttribute="height" id="EYL-hU-vVY"/>
@@ -85,10 +85,10 @@
                         <constraint firstItem="9J3-8D-qdo" firstAttribute="centerY" secondItem="pmI-cO-ezW" secondAttribute="centerY" id="rFr-V0-2h1"/>
                     </constraints>
                 </view>
-                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="1bc-2g-fhK">
-                    <rect key="frame" x="0.0" y="0.0" width="375" height="213"/>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="1bc-2g-fhK">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="220"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="yu5-HU-u68">
+                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="yu5-HU-u68" customClass="SCREmoticonLayout" customModule="SCREmoticonKeyboard" customModuleProvider="target">
                         <size key="itemSize" width="50" height="50"/>
                         <size key="headerReferenceSize" width="0.0" height="0.0"/>
                         <size key="footerReferenceSize" width="0.0" height="0.0"/>

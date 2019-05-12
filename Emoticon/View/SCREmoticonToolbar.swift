@@ -8,16 +8,16 @@
 
 import UIKit
 
-class SCEmoticonToolbar: UIView {
+class SCREmoticonToolbar: UIView {
     override func awakeFromNib() {
         setupUI()
     }
 
 }
-private extension SCEmoticonToolbar{
+private extension SCREmoticonToolbar{
     func setupUI() {
         
-        guard let bundlePath = Bundle(for: SCEmoticonToolbar.self).path(forResource: "Emoticons", ofType: "bundle"),
+        guard let bundlePath = Bundle(for: SCREmoticonToolbar.self).path(forResource: "Emoticons", ofType: "bundle"),
             let bundle = Bundle(path: bundlePath),
             let leftBtnNormalImgPath = bundle.path(forResource: "compose_emotion_table_left_normal@2x", ofType: "png"),
             let leftBtnNormalImg = UIImage(contentsOfFile: leftBtnNormalImgPath),

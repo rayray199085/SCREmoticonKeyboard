@@ -32,6 +32,15 @@ public class SCREmoticonPackage: NSObject {
     }
     @objc lazy var emoticonList: [SCREmoticon] = [SCREmoticon]()
     
+    @objc var numberOfPages: Int{
+        return (emoticonList.count - 1) / 20 + 1
+    }
+    
+    func getEmoticon(page: Int)->[SCREmoticon]{
+        let remaining = emoticonList.count - page * 20 >= 20 ? 20 : emoticonList.count - page * 20
+        return (emoticonList as NSArray).subarray(with: NSRange(location: page * 20, length: remaining)) as! [SCREmoticon]
+    }
+    
     override public var description: String{
         return yy_modelDescription()
     }
