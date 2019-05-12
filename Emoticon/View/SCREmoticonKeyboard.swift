@@ -14,7 +14,7 @@ public class SCREmoticonKeyboard: UIView {
     @IBOutlet weak var toolbar: UIView!
     private var selectedEmoticon:((_ emoticon: SCREmoticon?)->())?
     
-    class func emoticonKeyboard(keyboardSize: CGRect = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 260), selectedEmoticon:@escaping (_ emoticon: SCREmoticon?)->())-> SCREmoticonKeyboard{
+    public class func emoticonKeyboard(keyboardSize: CGRect = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 260), selectedEmoticon:@escaping (_ emoticon: SCREmoticon?)->())-> SCREmoticonKeyboard{
         let nib = UINib(nibName: "SCREmoticonKeyboard", bundle: Bundle(for: SCREmoticonKeyboard.self))
         let v = nib.instantiate(withOwner: self, options: nil)[0] as! SCREmoticonKeyboard
         v.frame = keyboardSize
