@@ -1,6 +1,6 @@
 Pod::Spec.new do |spec|
   spec.name         = "SCREmoticonKeyboard"
-  spec.version      = "0.0.8"
+  spec.version      = "0.0.9"
   spec.summary      = "Custom emoticon keyboard"
   spec.homepage     = "https://github.com/rayray199085/SCREmoticonKeyboard"
   spec.license      = "MIT"

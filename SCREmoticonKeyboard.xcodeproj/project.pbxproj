@@ -25,6 +25,7 @@
 		0DB604782282B640003FCBEF /* SCREmoticonPackage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB604742282B640003FCBEF /* SCREmoticonPackage.swift */; };
 		0DB604792282B640003FCBEF /* SCREmoticon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB604752282B640003FCBEF /* SCREmoticon.swift */; };
 		0DB6047A2282B640003FCBEF /* SCREmoticonManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB604762282B640003FCBEF /* SCREmoticonManager.swift */; };
+		0DBE244A2288FA6400B6BE75 /* UITextView+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DBE24492288FA6400B6BE75 /* UITextView+extension.swift */; };
 		F1F3BEF9AFD8CBA2B8819989 /* Pods_SCREmoticonKeyboard.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FDB1E7096CE96D33EC606963 /* Pods_SCREmoticonKeyboard.framework */; };
 /* End PBXBuildFile section */
 
@@ -49,6 +50,7 @@
 		0DB604742282B640003FCBEF /* SCREmoticonPackage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SCREmoticonPackage.swift; sourceTree = "<group>"; };
 		0DB604752282B640003FCBEF /* SCREmoticon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SCREmoticon.swift; sourceTree = "<group>"; };
 		0DB604762282B640003FCBEF /* SCREmoticonManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SCREmoticonManager.swift; sourceTree = "<group>"; };
+		0DBE24492288FA6400B6BE75 /* UITextView+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextView+extension.swift"; sourceTree = "<group>"; };
 		9C21FDE1D5E8A1622BD29FCF /* Pods-SCREmoticonKeyboard.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SCREmoticonKeyboard.debug.xcconfig"; path = "Target Support Files/Pods-SCREmoticonKeyboard/Pods-SCREmoticonKeyboard.debug.xcconfig"; sourceTree = "<group>"; };
 		A050A11F9C959425077B6858 /* Pods-SCREmoticonKeyboard.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SCREmoticonKeyboard.release.xcconfig"; path = "Target Support Files/Pods-SCREmoticonKeyboard/Pods-SCREmoticonKeyboard.release.xcconfig"; sourceTree = "<group>"; };
 		FDB1E7096CE96D33EC606963 /* Pods_SCREmoticonKeyboard.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SCREmoticonKeyboard.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -74,6 +76,7 @@
 				0D1F7CB42287B5520002781B /* UIImage+extension.swift */,
 				0D1F7CB62287B6CB0002781B /* UICollectionViewCell+extension.swift */,
 				0D3363142287FEE400B503E7 /* SCRTextAttachment.swift */,
+				0DBE24492288FA6400B6BE75 /* UITextView+extension.swift */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -288,6 +291,7 @@
 				0D1F7CB52287B5520002781B /* UIImage+extension.swift in Sources */,
 				0D1F7CB72287B6CB0002781B /* UICollectionViewCell+extension.swift in Sources */,
 				0D0D0F912287946300972A68 /* SCREmoticonLayout.swift in Sources */,
+				0DBE244A2288FA6400B6BE75 /* UITextView+extension.swift in Sources */,
 				0D6453462286B44600FFE7EE /* SCREmoticonCell.swift in Sources */,
 				0DB6047A2282B640003FCBEF /* SCREmoticonManager.swift in Sources */,
 				0D0D0F932287A30700972A68 /* String+extension.swift in Sources */,
