@@ -9,25 +9,7 @@
 import UIKit
 
 extension UITextView{
-    public func insertEmoticon(emoticon: SCREmoticon?){
-        guard let emoticon = emoticon else{
-            deleteBackward()
-            return
-        }
-        if let emoji = emoticon.emoji,
-            let textRange = selectedTextRange{
-           replace(textRange, withText: emoji)
-            return
-        }
-        let imageText = emoticon.imageText(font: font!)
-        let attrTextM = NSMutableAttributedString(attributedString: attributedText)
-        attrTextM.replaceCharacters(in: selectedRange, with: imageText)
-        let range = selectedRange
-        attributedText = attrTextM
-       selectedRange = NSRange(location: range.location + 1, length: 0)
-        print(emoticonText)
-    }
-    
+    /// convert attributed string to string for sending to the server
     public var emoticonText: String{
         guard let attrText = attributedText else{
             return ""
@@ -41,5 +23,23 @@ extension UITextView{
             }
         }
         return textString
+    }
+    public func insertEmoticon(emoticon: SCREmoticon?){
+        guard let emoticon = emoticon else{
+            deleteBackward()
+            return
+        }
+        if let emoji = emoticon.emoji,
+            let textRange = selectedTextRange{
+            replace(textRange, withText: emoji)
+            return
+        }
+        let imageText = emoticon.imageText(font: font!)
+        let attrTextM = NSMutableAttributedString(attributedString: attributedText)
+        attrTextM.replaceCharacters(in: selectedRange, with: imageText)
+        let range = selectedRange
+        attributedText = attrTextM
+        selectedRange = NSRange(location: range.location + 1, length: 0)
+        delegate?.textViewDidChange?(self)
     }
 }
