@@ -49,6 +49,23 @@ extension SCREmoticonManager{
             range: NSRange(location: 0, length: textM.length))
         return textM
     }
+    
+    /// Add recent used emoticon
+    ///
+    /// - Parameter emoticon: emoticon
+    public func addRecentEmoticon(emoticon: SCREmoticon){
+        emoticon.usedCount += 1
+        if !emoticonPackages[0].emoticonList.contains(emoticon){
+            emoticonPackages[0].emoticonList.append(emoticon)
+        }
+        emoticonPackages[0].emoticonList.sort { (em1, em2) -> Bool in
+            return em1.usedCount > em2.usedCount
+        }
+        if emoticonPackages[0].emoticonList.count > 20{
+            emoticonPackages[0].emoticonList.removeSubrange(
+                20..<emoticonPackages[0].emoticonList.count)
+        }
+    }
 }
 
 private extension SCREmoticonManager{

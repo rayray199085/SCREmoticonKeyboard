@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "0E2D62514EAC24D186452B366A574341"
+               BlueprintIdentifier = "9DA8D24159AB53B3552ED49902E01DF4"
                BuildableName = "Pods_SCREmoticonKeyboard.framework"
                BlueprintName = "Pods-SCREmoticonKeyboard"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -45,7 +45,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "0E2D62514EAC24D186452B366A574341"
+            BlueprintIdentifier = "9DA8D24159AB53B3552ED49902E01DF4"
             BuildableName = "Pods_SCREmoticonKeyboard.framework"
             BlueprintName = "Pods-SCREmoticonKeyboard"
             ReferencedContainer = "container:Pods.xcodeproj">

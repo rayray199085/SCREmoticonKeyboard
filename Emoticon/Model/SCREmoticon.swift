@@ -18,6 +18,7 @@ public class SCREmoticon: NSObject {
         return code?.getEmojiFromHexInt32CodeString()
     }
     @objc public var directory: String?
+    @objc public var usedCount: Int = 0
     @objc public var image: UIImage?{
         if type{
             return nil

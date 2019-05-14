@@ -6,5 +6,5 @@ target 'SCREmoticonKeyboard' do
   use_frameworks!
 
  pod "YYModel"
-
+ pod "SCRHintView"
 end

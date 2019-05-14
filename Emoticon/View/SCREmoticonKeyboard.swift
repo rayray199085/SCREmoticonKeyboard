@@ -45,5 +45,14 @@ extension SCREmoticonKeyboard: UICollectionViewDelegate, UICollectionViewDataSou
 extension SCREmoticonKeyboard: SCREmoticonCellDelegate{
     func cellDidSelectEmoticonKey(cell: SCREmoticonCell, emoticon: SCREmoticon?) {
         selectedEmoticon?(emoticon)
+        guard let emoticon = emoticon else{
+            return 
+        }
+        let currentIndexPath = collectionView.indexPathsForVisibleItems[0]
+        if currentIndexPath.section == 0{
+            return 
+        }
+        SCREmoticonManager.shared.addRecentEmoticon(emoticon: emoticon)
+        collectionView.reloadSections(IndexSet(integersIn: 0..<1))
     }
 }

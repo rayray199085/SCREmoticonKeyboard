@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SCRHintView
 
 protocol SCREmoticonCellDelegate: NSObjectProtocol {
     /// - Parameters:
@@ -17,6 +18,8 @@ protocol SCREmoticonCellDelegate: NSObjectProtocol {
 private let emoticonWidth: CGFloat = UIScreen.main.scale == 2 ? 32 : 48
 class SCREmoticonCell: UICollectionViewCell {
     weak var delegate: SCREmoticonCellDelegate?
+    
+    private lazy var hintView = SCRHintView()
     /// Maximun number is 20
     var emoticons : [SCREmoticon]?{
         didSet{
@@ -66,6 +69,36 @@ class SCREmoticonCell: UICollectionViewCell {
         }
         delegate?.cellDidSelectEmoticonKey(cell: self, emoticon: emoticon)
     }
+    
+    @objc private func longPressGestureObserver(recognizer: UILongPressGestureRecognizer){
+        let location = recognizer.location(in: self)
+        guard let btn = getButtonWithLocation(location: location),
+            let emoticon = emoticons?[btn.tag] else{
+            return
+        }
+        hintView.icon = SCRHintIcon(image: emoticon.image, text: emoticon.emoji)
+        guard let button = hintView.showWithLongPress(parentView: self, pressView: btn, recognizer: recognizer) as? UIButton else{
+            return
+        }
+        clickEmoticonButton(button: button)
+    }
+    private func getButtonWithLocation(location: CGPoint)->UIButton?{
+        for btn in contentView.subviews as! [UIButton]{
+            if !btn.isHidden && btn.frame.contains(location) && btn != contentView.subviews.last{
+                return btn
+            }
+            hintView.isHidden = true
+        }
+        return nil
+    }
+    
+    override func willMove(toWindow newWindow: UIWindow?) {
+        super.willMove(toWindow: newWindow)
+        guard let win = newWindow else{
+            return
+        }
+        win.addSubview(hintView)
+    }
 }
 private extension SCREmoticonCell{
     func setupUI(){
@@ -84,5 +117,9 @@ private extension SCREmoticonCell{
             button.addTarget(self, action: #selector(clickEmoticonButton), for: UIControl.Event.touchUpInside)
             contentView.addSubview(button)
         }
+        let longPress = UILongPressGestureRecognizer(target: self, action: #selector(longPressGestureObserver))
+        longPress.minimumPressDuration = 0.5
+        addGestureRecognizer(longPress)
     }
+    
 }
