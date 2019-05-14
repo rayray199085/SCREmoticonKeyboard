@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import YYModel
 
 public class SCREmoticon: NSObject {
     @objc public var chs: String?
@@ -44,9 +43,5 @@ public class SCREmoticon: NSObject {
         let attrTextM = NSMutableAttributedString(attributedString: NSAttributedString(attachment: attachment))
         attrTextM.addAttributes([NSAttributedString.Key.font : font], range: NSRange(location: 0, length: 1))
         return attrTextM
-    }
-    
-    override public var description: String{
-        return yy_modelDescription()
     }
 }

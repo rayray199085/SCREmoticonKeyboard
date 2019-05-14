@@ -11,6 +11,7 @@ Pod::Spec.new do |spec|
   spec.requires_arc = true
   spec.swift_version = '4.0'
   spec.resources = "Emoticon/Emoticons.bundle"
-  spec.dependency "YYModel", "~> 1.0.4"
+  spec.dependency "MJExtension", "~> 3.0.17"
+  spec.dependency "SCRHintView", "~> 0.0.1"
 
 end

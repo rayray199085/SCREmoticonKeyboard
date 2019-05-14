@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import YYModel
+import MJExtension
 
 public class SCREmoticonManager{
     public static let shared = SCREmoticonManager()
@@ -75,7 +75,7 @@ private extension SCREmoticonManager{
             let emoticonBundle = Bundle(path: path),
             let listPath = emoticonBundle.path(forResource: "emoticons", ofType: "plist", inDirectory: nil),
             let array = NSArray(contentsOf: URL(fileURLWithPath: listPath)) as? [[String: String]],
-            let packages = NSArray.yy_modelArray(with: SCREmoticonPackage.self, json: array) as? [SCREmoticonPackage] else{
+            let packages = SCREmoticonPackage.mj_objectArray(withKeyValuesArray: array) as? [SCREmoticonPackage] else{
                 return
         }
         emoticonPackages += packages
