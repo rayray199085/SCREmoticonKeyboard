@@ -37,6 +37,7 @@ class SCREmoticonCell: UICollectionViewCell {
                 let fontSize = emoji?.getTextFontWithLabelHeight(width: btn.bounds.height) ?? 32
                 btn.titleLabel?.font = UIFont.systemFont(ofSize: fontSize)
                 btn.isHidden = false
+                btn.adjustsImageWhenHighlighted = false
             }
             
             let bundle = Bundle(for: SCREmoticonCell.self)

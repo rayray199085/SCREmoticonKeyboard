@@ -99,13 +99,20 @@
                         <outlet property="delegate" destination="Jx0-ct-4Qa" id="4PW-sI-mHf"/>
                     </connections>
                 </collectionView>
+                <pageControl opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" hidesForSinglePage="YES" numberOfPages="1" translatesAutoresizingMaskIntoConstraints="NO" id="ztU-eo-IB5">
+                    <rect key="frame" x="187.5" y="225" width="0.0" height="0.0"/>
+                    <color key="pageIndicatorTintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <color key="currentPageIndicatorTintColor" red="1" green="0.42352941179999998" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                </pageControl>
             </subviews>
             <constraints>
                 <constraint firstItem="pmI-cO-ezW" firstAttribute="leading" secondItem="viu-rG-Hwh" secondAttribute="leading" id="5Cg-On-FF4"/>
                 <constraint firstItem="pmI-cO-ezW" firstAttribute="trailing" secondItem="viu-rG-Hwh" secondAttribute="trailing" id="6V5-nF-W2M"/>
+                <constraint firstItem="ztU-eo-IB5" firstAttribute="centerX" secondItem="Jx0-ct-4Qa" secondAttribute="centerX" id="Kl3-0p-JhW"/>
                 <constraint firstItem="pmI-cO-ezW" firstAttribute="top" secondItem="1bc-2g-fhK" secondAttribute="bottom" id="cPE-wS-05R"/>
                 <constraint firstItem="1bc-2g-fhK" firstAttribute="top" secondItem="viu-rG-Hwh" secondAttribute="top" id="oYT-fd-jBh"/>
                 <constraint firstItem="viu-rG-Hwh" firstAttribute="trailing" secondItem="1bc-2g-fhK" secondAttribute="trailing" id="sgI-wX-HUF"/>
+                <constraint firstItem="pmI-cO-ezW" firstAttribute="top" secondItem="ztU-eo-IB5" secondAttribute="bottom" constant="-5" id="tNZ-cY-o0C"/>
                 <constraint firstItem="1bc-2g-fhK" firstAttribute="leading" secondItem="viu-rG-Hwh" secondAttribute="leading" id="y4F-dD-CP9"/>
                 <constraint firstItem="pmI-cO-ezW" firstAttribute="bottom" secondItem="viu-rG-Hwh" secondAttribute="bottom" id="zuw-lb-8sE"/>
             </constraints>
@@ -113,6 +120,7 @@
             <viewLayoutGuide key="safeArea" id="viu-rG-Hwh"/>
             <connections>
                 <outlet property="collectionView" destination="1bc-2g-fhK" id="sSo-Kh-N9G"/>
+                <outlet property="pageControl" destination="ztU-eo-IB5" id="py4-R2-L1g"/>
                 <outlet property="toolbar" destination="pmI-cO-ezW" id="0Tx-B0-Qaq"/>
             </connections>
             <point key="canvasLocation" x="208.80000000000001" y="85.457271364317847"/>

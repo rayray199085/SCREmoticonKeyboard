@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		0D0D0F912287946300972A68 /* SCREmoticonLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D0D0F902287946300972A68 /* SCREmoticonLayout.swift */; };
 		0D0D0F932287A30700972A68 /* String+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D0D0F922287A30700972A68 /* String+extension.swift */; };
+		0D125B1A228BABAE00BBE080 /* UIPageControl+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D125B19228BABAE00BBE080 /* UIPageControl+extension.swift */; };
 		0D1F7CB52287B5520002781B /* UIImage+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D1F7CB42287B5520002781B /* UIImage+extension.swift */; };
 		0D1F7CB72287B6CB0002781B /* UICollectionViewCell+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D1F7CB62287B6CB0002781B /* UICollectionViewCell+extension.swift */; };
 		0D3363152287FEE400B503E7 /* SCRTextAttachment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D3363142287FEE400B503E7 /* SCRTextAttachment.swift */; };
@@ -32,6 +33,7 @@
 /* Begin PBXFileReference section */
 		0D0D0F902287946300972A68 /* SCREmoticonLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SCREmoticonLayout.swift; sourceTree = "<group>"; };
 		0D0D0F922287A30700972A68 /* String+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+extension.swift"; sourceTree = "<group>"; };
+		0D125B19228BABAE00BBE080 /* UIPageControl+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIPageControl+extension.swift"; sourceTree = "<group>"; };
 		0D1F7CB42287B5520002781B /* UIImage+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+extension.swift"; sourceTree = "<group>"; };
 		0D1F7CB62287B6CB0002781B /* UICollectionViewCell+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionViewCell+extension.swift"; sourceTree = "<group>"; };
 		0D3363142287FEE400B503E7 /* SCRTextAttachment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SCRTextAttachment.swift; sourceTree = "<group>"; };
@@ -77,6 +79,7 @@
 				0D1F7CB62287B6CB0002781B /* UICollectionViewCell+extension.swift */,
 				0D3363142287FEE400B503E7 /* SCRTextAttachment.swift */,
 				0DBE24492288FA6400B6BE75 /* UITextView+extension.swift */,
+				0D125B19228BABAE00BBE080 /* UIPageControl+extension.swift */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -302,6 +305,7 @@
 				0D6453422286A07A00FFE7EE /* SCREmoticonToolbar.swift in Sources */,
 				0D64533C2286906E00FFE7EE /* SCREmoticonKeyboard.swift in Sources */,
 				0DB6045622824F18003FCBEF /* AppDelegate.swift in Sources */,
+				0D125B1A228BABAE00BBE080 /* UIPageControl+extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -10,8 +10,9 @@ import UIKit
 private let reuseIdentifier = "cell_id"
 public class SCREmoticonKeyboard: UIView {
 
+    @IBOutlet weak var pageControl: UIPageControl!
     @IBOutlet weak var collectionView: UICollectionView!
-    @IBOutlet weak var toolbar: UIView!
+    @IBOutlet weak var toolbar: SCREmoticonToolbar!
     private var selectedEmoticon:((_ emoticon: SCREmoticon?)->())?
     
     public class func emoticonKeyboard(keyboardSize: CGRect = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 260), selectedEmoticon:@escaping (_ emoticon: SCREmoticon?)->())-> SCREmoticonKeyboard{
@@ -24,6 +25,17 @@ public class SCREmoticonKeyboard: UIView {
     
     public override func awakeFromNib() {
         collectionView.register(SCREmoticonCell.self, forCellWithReuseIdentifier: reuseIdentifier)
+        toolbar.delegate = self
+        let bundle = Bundle(for: SCREmoticonKeyboard.self)
+        guard let resourcesBundlePath = bundle.path(forResource: "Emoticons", ofType: "bundle"),
+             let resourcesBundle = Bundle(path: resourcesBundlePath),
+        let normalImagePath = resourcesBundle.path(forResource: "compose_keyboard_dot_normal@2x", ofType: "png"),
+        let normalImage = UIImage(contentsOfFile: normalImagePath),
+        let selectedImagePath = resourcesBundle.path(forResource: "compose_keyboard_dot_selected@2x", ofType: "png"),
+        let selectedImage = UIImage(contentsOfFile: selectedImagePath) else{
+            return
+        }
+        pageControl.setPageControlImages(normalImage: normalImage, selectedImage: selectedImage)
     }
 }
 extension SCREmoticonKeyboard: UICollectionViewDelegate, UICollectionViewDataSource{
@@ -54,5 +66,32 @@ extension SCREmoticonKeyboard: SCREmoticonCellDelegate{
         }
         SCREmoticonManager.shared.addRecentEmoticon(emoticon: emoticon)
         collectionView.reloadSections(IndexSet(integersIn: 0..<1))
+    }
+}
+extension SCREmoticonKeyboard: SCREmoticonToolbarDelegate{
+    func toolbarDidSelectButton(toolbar: SCREmoticonToolbar, button: UIButton) {
+        collectionView.scrollToItem(at: IndexPath(item: 0, section: button.tag), at: UICollectionView.ScrollPosition.left, animated: true)
+        toolbar.selectedButtonIndex = button.tag
+    }
+}
+
+extension SCREmoticonKeyboard{
+    public func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        var center = scrollView.center
+        center.x += scrollView.contentOffset.x
+        
+        let visibleIndexPaths = collectionView.indexPathsForVisibleItems
+        
+        for indexPath in visibleIndexPaths{
+            guard let cell = collectionView.cellForItem(at: indexPath) else{
+                continue
+            }
+            if cell.frame.contains(center){
+                toolbar.selectedButtonIndex = indexPath.section
+                pageControl.numberOfPages = collectionView.numberOfItems(inSection: indexPath.section)
+                pageControl.currentPage = indexPath.item
+                break
+            }
+        }
     }
 }

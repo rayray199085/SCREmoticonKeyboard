@@ -7,12 +7,27 @@
 //
 
 import UIKit
-
+protocol SCREmoticonToolbarDelegate: NSObjectProtocol {
+    func toolbarDidSelectButton(toolbar: SCREmoticonToolbar, button: UIButton)
+}
 class SCREmoticonToolbar: UIView {
+    weak var delegate: SCREmoticonToolbarDelegate?
+    var selectedButtonIndex: Int = 0{
+        didSet{
+            for btn in subviews as! [UIButton]{
+                btn.isSelected = false
+            }
+            (subviews[selectedButtonIndex] as! UIButton).isSelected = true
+        }
+    }
+    
     override func awakeFromNib() {
         setupUI()
     }
-
+    
+    @objc private func clickToolbarButton(button: UIButton){
+        delegate?.toolbarDidSelectButton(toolbar: self, button: button)
+    }
 }
 private extension SCREmoticonToolbar{
     func setupUI() {
@@ -38,6 +53,8 @@ private extension SCREmoticonToolbar{
         let manager = SCREmoticonManager.shared
         for (index,v) in subviews.enumerated(){
             let btn = v as! UIButton
+            btn.tag = index
+            btn.addTarget(self, action: #selector(clickToolbarButton), for: UIControl.Event.touchUpInside)
             btn.setTitle(manager.emoticonPackages[index].emoticon_group_name, for: [])
             if btn == subviews.first{
                 btn.setBackgroundImage(resizeImage(image: leftBtnNormalImg), for: [])
@@ -53,6 +70,7 @@ private extension SCREmoticonToolbar{
                 btn.setBackgroundImage(resizeImage(image: midBtnSelectedImg), for: UIControl.State.selected)
             }
         }
+        (subviews[0] as! UIButton).isSelected = true
     }
     
     func resizeImage(image:UIImage)->UIImage{
